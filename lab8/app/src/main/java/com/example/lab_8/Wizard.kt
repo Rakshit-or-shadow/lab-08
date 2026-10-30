@@ -29,5 +29,11 @@ class Wizard(val name: String, var mana: Int, var spellPower: Int) {
         mana = minOf(100, mana + amount)
     }
 
-    fun train() { }
+    fun train() {
+        // Only train if we have at least 5 mana
+        if (mana >= 5) {
+            spellPower += 1 // get stronger
+            mana -= 5       // training costs 5 mana
+        }
+    }
 }
